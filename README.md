@@ -1,4 +1,4 @@
 # Gentoo Simple Installer
-A ".iso" disk image for easily installing Gentoo.
+A script for easily installing Gentoo Linux
 
 ## Coming soon
