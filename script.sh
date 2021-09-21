@@ -163,12 +163,13 @@ chroot /mnt/gentoo /bin/bash -s << END
 END
 
 echo " Updating configuration"
-env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
+chroot /mnt/gentoo /bin/bash 
+source /etc/profile 
+export PS1="(chroot) ${PS1}"
 
 echo " Installing portage..."
 mkdir -p /etc/portage/repos.conf
 cp -f /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
-emerge-webrsync
 
 echo " Installing kernel sources..."
 
