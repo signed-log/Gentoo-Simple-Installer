@@ -17,6 +17,7 @@ do
     read -r -p "Please select your drive
     [1] /dev/sda [2] /dev/sdb [3] /dev/sdc [4] /dev/sdd
     [5] /dev/sde [6] /dev/sdf [7] /dev/sdg [8] /dev/sdh
+    
     A larger selection of drives is coming soon." input
 
     case $input in
@@ -161,14 +162,16 @@ chroot /mnt/gentoo /bin/bash -s << END
 
 END
 
-echo " Upading configuration..."
-env-update
-source /etc/profile
+echo " Updating configuration"
+env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
+
 echo " Installing portage..."
 mkdir -p /etc/portage/repos.conf
 cp -f /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
 emerge-webrsync
+
 echo " Installing kernel sources..."
+
 emerge sys-kernel/gentoo-sources
 if [ "$USE_LIVECD_KERNEL" = 0 ]; then
     echo " Installing kernel..."
@@ -177,6 +180,7 @@ if [ "$USE_LIVECD_KERNEL" = 0 ]; then
     emerge sys-kernel/genkernel
     genkernel all --kernel-config=$(find /etc/kernels -type f -iname 'kernel-config-*' | head -n 1)
 fi
+
 echo " Installing bootloader..."
 emerge grub
 cat >> /etc/portage/make.conf << IEND
@@ -219,7 +223,7 @@ while true
 do
     read -r -p "Do you want to create a user? [Y/n] " input
 
-    case $input in
+0    case $input in
         [yY][eE][sS]|[yY])
             echo "What should this user be called?"
             read input
