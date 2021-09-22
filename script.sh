@@ -8,56 +8,67 @@
 
 set -e
 
-echo Thank you for using Gentoo Simple Installer
-
 # Variables
 
-while true
-do
-    read -r -p "Please select your drive
-    [1] /dev/sda [2] /dev/sdb [3] /dev/sdc [4] /dev/sdd
-    [5] /dev/sde [6] /dev/sdf [7] /dev/sdg [8] /dev/sdh
-    
-    A larger selection of drives is coming soon." input
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=4
+BACKTITLE="Gentoo-Simple-Installer"
+TITLE="Please select the drive you want to install Gentoo onto..."
+MENU="A larger selection of drives is coming soon."
 
-    case $input in
-        [1])
+OPTIONS=(1 "/dev/sda"
+         2 "/dev/sdb"
+         3 "/dev/sdc"
+         4 "/dev/sdd"
+         5 "/dev/sde"
+         6 "/dev/sdf"
+         7 "/dev/nvme0n1"
+         8 "/dev/nvme0n2"
+         9 "/dev/nvme0n3"
+         10 "/dev/nvme0n4")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+        1)
             TARGET_DISK=/dev/sda
-            break
             ;;
-        [2])
+        2)
             TARGET_DISK=/dev/sdb
-            break
             ;;
-        [3])
+        3)
             TARGET_DISK=/dev/sdc
-            break
             ;;
-        [4])
+        4)
             TARGET_DISK=/dev/sdd
-            break
             ;;
-        [5])
+        5)
             TARGET_DISK=/dev/sde
-            break
             ;;
-        [6])
+        6)
             TARGET_DISK=/dev/sdf
-            break
             ;;
-        [7])
-            TARGET_DISK=/dev/sdg
-            break
+        7)
+            TARGET_DISK=/dev/nvme0n1
             ;;
-        [8])
-            TARGET_DISK=/dev/sdh
-            break
-                ;;
-        *)
-        echo "Invalid input..."
-        ;;
-    esac
-done
+        8)
+            TARGET_DISK=/dev/nvme0n2
+            ;;
+        9)
+            TARGET_DISK=/dev/nvme0n3
+            ;;
+        10)
+            TARGET_DISK=/dev/nvme0n4
+            ;;
+esac
 
 GENTOO_MIRROR="http://distfiles.gentoo.org"
 
