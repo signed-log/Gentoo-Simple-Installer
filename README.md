@@ -1,4 +1,4 @@
-# Early development
+# EARLY DEVELOPMENT
 # Do not run on physical hardware
 ---
 # Gentoo Simple Installer
