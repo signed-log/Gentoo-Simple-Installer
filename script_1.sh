@@ -6,7 +6,7 @@ HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
 BACKTITLE="Gentoo-Simple-Installer"
-TITLE="Please select the drive you want to install Gentoo onto..."
+TITLE="Please select the drive to partition."
 MENU="A larger selection of drives is coming soon."
 
 OPTIONS=(1 "/dev/sda"
