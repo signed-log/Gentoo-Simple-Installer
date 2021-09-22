@@ -2,6 +2,53 @@
 
 set -e
 
+while true
+do
+    read -r -p "Please select your drive again
+    [1] /dev/sda [2] /dev/sdb [3] /dev/sdc [4] /dev/sdd
+    [5] /dev/sde [6] /dev/sdf [7] /dev/sdg [8] /dev/sdh
+    
+    A larger selection of drives is coming soon." input
+
+    case $input in
+        [1])
+            TARGET_DISK=/dev/sda
+            break
+            ;;
+        [2])
+            TARGET_DISK=/dev/sdb
+            break
+            ;;
+        [3])
+            TARGET_DISK=/dev/sdc
+            break
+            ;;
+        [4])
+            TARGET_DISK=/dev/sdd
+            break
+            ;;
+        [5])
+            TARGET_DISK=/dev/sde
+            break
+            ;;
+        [6])
+            TARGET_DISK=/dev/sdf
+            break
+            ;;
+        [7])
+            TARGET_DISK=/dev/sdg
+            break
+            ;;
+        [8])
+            TARGET_DISK=/dev/sdh
+            break
+                ;;
+        *)
+        echo "Invalid input..."
+        ;;
+    esac
+done
+
 echo "### Upading configuration..."
 
 env-update
