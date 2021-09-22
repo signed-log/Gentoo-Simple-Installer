@@ -1,5 +1,5 @@
 # Early development
-# Do not install on physical hardware
+# Do not run on physical hardware
 ---
 # Gentoo Simple Installer
 A script for easily installing Gentoo Linux
