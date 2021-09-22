@@ -12,4 +12,4 @@ Here are the bash commands
 
 The script should be running after running these commands.
 
-### Don't bother downloading script_1.sh, script.sh will download that script anyway.
+### Don't bother downloading script_1.sh.
