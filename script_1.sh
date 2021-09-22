@@ -62,11 +62,6 @@ case $CHOICE in
             ;;
 esac
 
-echo "### Upading configuration..."
-
-env-update
-source /etc/profile
-
 echo "### Installing portage..."
 
 mkdir -p /etc/portage/repos.conf
