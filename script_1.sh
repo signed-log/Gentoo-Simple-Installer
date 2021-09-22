@@ -62,9 +62,6 @@ case $CHOICE in
             ;;
 esac
 
-echo " Entering chroot..."
-chroot /mnt/gentoo
-
 echo "### Upading configuration..."
 
 env-update
