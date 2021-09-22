@@ -1,5 +1,6 @@
 # EARLY DEVELOPMENT
 # Do not run on physical hardware
+# I am not responsible for any data loss.
 ---
 # Gentoo Simple Installer
 A script for easily installing Gentoo Linux
