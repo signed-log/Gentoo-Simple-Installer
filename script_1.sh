@@ -49,6 +49,9 @@ do
     esac
 done
 
+echo " Entering chroot..."
+chroot /mnt/gentoo
+
 echo "### Upading configuration..."
 
 env-update
