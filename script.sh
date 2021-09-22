@@ -171,9 +171,14 @@ echo " Changing root..."
 
 chroot /mnt/gentoo /bin/bash -s << END
 
+END
+
 echo " Downloading script_1.sh..."
 
 cd ~
+
 wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/script_1.sh
+
 chmod +x script_1.sh
+
 ./script_1.sh
