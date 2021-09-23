@@ -61,19 +61,29 @@ case $CHOICE in
             TARGET_DISK=/dev/nvme0n4
             ;;
 esac
+echo " Entering chroot..."
 
-echo "### Installing portage..."
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(chroot) ${PS1}"
+
+echo " Upading configuration..."
+
+env-update
+source /etc/profile
+
+echo " Installing portage..."
 
 mkdir -p /etc/portage/repos.conf
 cp -f /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
 emerge-webrsync
 
-echo "### Installing kernel sources..."
+echo " Installing kernel sources..."
 
 emerge sys-kernel/gentoo-sources
 
 if [ "$USE_LIVECD_KERNEL" = 0 ]; then
-    echo "### Installing kernel..."
+    echo " Installing kernel..."
 
     echo "sys-kernel/genkernel -firmware" > /etc/portage/package.use/genkernel
     echo "sys-apps/util-linux static-libs" >> /etc/portage/package.use/genkernel
@@ -83,7 +93,7 @@ if [ "$USE_LIVECD_KERNEL" = 0 ]; then
     genkernel all --kernel-config=$(find /etc/kernels -type f -iname 'kernel-config-*' | head -n 1)
 fi
 
-echo "### Installing bootloader..."
+echo " Installing bootloader..."
 
 emerge grub
 
@@ -104,21 +114,21 @@ IEND
 grub-install ${TARGET_DISK}
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "### Configuring network..."
+echo " Configuring network..."
 
 ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
 rc-update add net.eth0 default
 
 if [ -z "$ROOT_PASSWORD" ]; then
-    echo "### Removing root password..."
+    echo " Removing root password..."
     passwd -d -l root
 else
-    echo "### Configuring root password..."
+    echo " Configuring root password..."
     echo "root:$ROOT_PASSWORD" | chpasswd
 fi
 
 if [ -n "$SSH_PUBLIC_KEY" ]; then
-    echo "### Configuring SSH..."
+    echo " Configuring SSH..."
 
     rc-update add sshd default
 
