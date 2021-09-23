@@ -1,11 +1,11 @@
-# EARLY DEVELOPMENT
-# Do not run on physical hardware
-# I am not responsible for any data loss.
+## EARLY DEVELOPMENT
+## Do not run on physical hardware
+## I am not responsible for any data loss.
 ---
-## Gentoo Simple Installer
+# Gentoo Simple Installer
 A script for easily installing Gentoo Linux
 
-## How to execute this script
+# How to execute this script
 Here are the bash commands
 
 1. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/script.sh
