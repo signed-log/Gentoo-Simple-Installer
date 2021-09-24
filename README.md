@@ -1,4 +1,5 @@
 ## EARLY DEVELOPMENT
+## This script currently does not work!
 ## Do not run on physical hardware!
 ## I am not responsible for any data loss.
 ---
