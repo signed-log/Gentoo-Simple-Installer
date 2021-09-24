@@ -44,6 +44,10 @@ ROOT_PASSWORD=${ROOT_PASSWORD:-}
 
 # 
 
+echo " Setting time"
+
+ntpd -q -g
+
 echo " Formatting partitions..."
 
 yes | mkfs.ext4 ${TARGET_DISK}1
@@ -112,14 +116,10 @@ END
 
 echo " Mounting proc/sys/dev..."
 
-mount -t proc none /mnt/gentoo/proc
-mount -t sysfs none /mnt/gentoo/sys
-mount -o bind /dev /mnt/gentoo/dev
-mount -o bind /dev/pts /mnt/gentoo/dev/pts
-mount -o bind /dev/shm /mnt/gentoo/dev/shm
-
-echo " Changing root..."
-
-chroot /mnt/gentoo /bin/bash
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys 
+mount --make-rslave /mnt/gentoo/sys 
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev 
 
 echo " Script 1.sh has finished please refer to README.md for instructions."
