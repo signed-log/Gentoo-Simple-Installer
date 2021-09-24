@@ -95,13 +95,13 @@ do
     read -r -p "Do you want to create a user? [Y/n] " input
 
 0    case $input in
-        [yY][eE][sS]|[yY])
+        [yY][eE][sS]|[yY]
             echo "What should this user be called?"
             read input
             useradd $input
             break
             ;;
-        [nN][oO]|[nN])
+        [nN][oO]|[nN]
             break
                 ;;
         *)
