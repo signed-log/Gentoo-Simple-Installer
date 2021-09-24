@@ -9,8 +9,8 @@ A script for easily installing Gentoo Linux
 Here are the bash commands
 
 1. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/1.sh
-2. | chmod +x script.sh
-3. | ./script.sh
+2. | chmod +x 1.sh
+3. | ./1.sh
 
 After Script 1.sh has finished please execute the following commands.
 
