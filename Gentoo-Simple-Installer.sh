@@ -26,7 +26,6 @@ esac
 # Variables
 
 read -p "Enter the drive you want to install Gentoo onto: (This will destroy all data on your drive!)" TARGET_DISK
-esac
 
 GENTOO_MIRROR="http://distfiles.gentoo.org"
 
@@ -34,7 +33,7 @@ GENTOO_ARCH="amd64"
 GENTOO_STAGE3="amd64"
 
 TARGET_BOOT_SIZE=512M
-TARGET_SWAP_SIZE=2G
+TARGET_SWAP_SIZE=4G
 
 GRUB_PLATFORMS=pc
 
