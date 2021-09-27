@@ -1,3 +1,21 @@
+# Variables
+
+read -p "Enter the drive you entered in the first script:" TARGET_DISK
+
+GENTOO_MIRROR="http://distfiles.gentoo.org"
+
+GENTOO_ARCH="amd64"
+GENTOO_STAGE3="amd64"
+
+TARGET_BOOT_SIZE=512M
+TARGET_SWAP_SIZE=4G
+
+GRUB_PLATFORMS=pc
+
+USE_LIVECD_KERNEL=${USE_LIVECD_KERNEL:-1}
+
+SSH_PUBLIC_KEY=${SSH_PUBLIC_KEY:-}
+ROOT_PASSWORD=${ROOT_PASSWORD:-}
 
 echo " Mounting the boot partition"
 
