@@ -82,8 +82,9 @@ make install
 
 echo " Configuring the modules"
 
+read uname KERNEL_VERSION
 
-find /lib/modules/<kernel version>/ -type f -iname '*.o' -or -iname '*.ko' | less
+find /lib/modules/KERNEL_VERSION/ -type f -iname '*.o' -or -iname '*.ko' | less
 
 mkdir -p /etc/modules-load.d
 
