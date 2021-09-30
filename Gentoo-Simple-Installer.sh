@@ -41,6 +41,14 @@ ROOT_PASSWORD=${ROOT_PASSWORD:-}
 
 # 
 
+echo " Creating partitions..."
+
+sfdisk ${TARGET_DISK} << END
+size=$TARGET_BOOT_SIZE,bootable
+size=$TARGET_SWAP_SIZE
+;
+END
+
 echo " Setting time"
 
 ntpd -q -g
