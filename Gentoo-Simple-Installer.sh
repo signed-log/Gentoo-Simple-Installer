@@ -152,16 +152,4 @@ mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 
 echo " The first part of the installation has finished...
-Please run the following commands to continue the installation:"
-
-echo "chroot /mnt/gentoo /bin/bash"
-
-echo "source /etc/profile" 
-
-echo ""export PS1="(chroot) ${PS1}""
-
-echo "wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/Gentoo-Simple-Installer_1.sh"
-
-echo "chmod +x Gentoo-Simple-Installer_1.sh"
-
-echo "./Gentoo-Simple-Installer_1.sh"
+Please refer to README.md for instructions:"
