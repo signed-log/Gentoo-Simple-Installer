@@ -12,9 +12,8 @@ When Gentoo-Simple-Installer.sh has finished you need to run the following comma
 
 4. | chroot /mnt/gentoo /bin/bash"
 5. | source /etc/profile
-6. | export PS1="(chroot) ${PS1}
-7. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/Gentoo-Simple-Installer_1.sh
-8. | chmod +x Gentoo-Simple-Installer_1.sh
-9. | Gentoo-Simple-Installer_1.sh
+6. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/Gentoo-Simple-Installer_1.sh
+7. | chmod +x Gentoo-Simple-Installer_1.sh
+8. | Gentoo-Simple-Installer_1.sh
 
 I am not responsible for any data loss.
