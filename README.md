@@ -10,7 +10,7 @@ Here are the bash commands
 
 When Gentoo-Simple-Installer.sh has finished you need to run the following commands:
 
-4. | chroot /mnt/gentoo /bin/bash"
+4. | chroot /mnt/gentoo /bin/bash
 5. | source /etc/profile
 6. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/Gentoo-Simple-Installer_1.sh
 7. | chmod +x Gentoo-Simple-Installer_1.sh
