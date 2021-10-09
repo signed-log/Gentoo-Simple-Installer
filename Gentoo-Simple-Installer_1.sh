@@ -80,17 +80,6 @@ make && make modules_install
 
 make install
 
-echo " Configuring the modules"
-
-read uname KERNEL_VERSION
-
-find /lib/modules/KERNEL_VERSION/ -type f -iname '*.o' -or -iname '*.ko' | less
-
-mkdir -p /etc/modules-load.d
-
-nano -w /etc/modules-load.d/network.conf 
-
-
 read -r -p "Do you want to install drivers? [Y/n] " input
  
 case $input in
