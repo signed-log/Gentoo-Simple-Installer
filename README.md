@@ -3,6 +3,7 @@ A script for easily installing Gentoo Linux
 
 # How to use this script
 Step 1. Flash the Gentoo Live CD onto a USB Drive or DVD.
+
 Step 2. Execute the following commands.
 
 1. | wget https://raw.githubusercontent.com/LJB018/Gentoo-Simple-Installer/main/Gentoo-Simple-Installer.sh
