@@ -1,6 +1,6 @@
 # Gentoo Simple Installer
 
-# https://github.com/LJB018/Gentoo-Simple-Installer
+# https://github.com/Stig124/Gentoo-Simple-Installer
 
 
 read -r -p "Please note:
